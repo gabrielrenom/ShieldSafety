@@ -1,0 +1,1 @@
+C:\ShieldSafety.Web\ShieldSafety.DAL\obj\Debug\ShieldSafety.DAL.csprojResolveAssemblyReference.cache

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShieldSafety.DAL.Models
 {
-    public class Customer
+    public class Customer : BaseEntity
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

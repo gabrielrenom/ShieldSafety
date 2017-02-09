@@ -1,5 +1,6 @@
 ﻿using ShieldSafety.Business.Model;
 using ShieldSafety.Business.Repository;
+using ShieldSafety.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShieldSafety.Business.Interfaces
+namespace ShieldSafety.DAL.Managers
 {
     public interface IBaseManager<TD, TE>
     where TD : BaseModel
@@ -74,7 +75,7 @@ namespace ShieldSafety.Business.Interfaces
         /// </summary>
         /// <param name="domainModel">The domain model.</param>
         /// <returns></returns>
-        IEnumerable<ValidationResult> Validate(TD domainModel);
+        //IEnumerable<ValidationResult> Validate(TD domainModel);
 
         /// <summary>
         /// Transforms the domain model into a corresponding data model.

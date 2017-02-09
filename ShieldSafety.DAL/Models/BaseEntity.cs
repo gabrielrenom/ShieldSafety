@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace ShieldSafety.DAL.Models
 {
-    class BaseEntity
+    public abstract class BaseEntity
     {
+        public int Id { get; set; }
+        public string CreatedBy { get; set; }
+        public string ModifiedBy { get; set; }
+        public DateTime? Created { get; set; }
+        public DateTime? Modified { get; set; }
     }
 }
