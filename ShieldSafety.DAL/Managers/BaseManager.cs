@@ -1,6 +1,5 @@
 ﻿using ShieldSafety.Business.Model;
 using ShieldSafety.Business.Repository;
-using ShieldSafety.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity;
+using ShieldSafety.Business.Managers;
+using ShieldSafety.Data.Models;
 
 namespace ShieldSafety.DAL.Managers
 {

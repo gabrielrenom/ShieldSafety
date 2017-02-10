@@ -3,3 +3,5 @@ C:\ShieldSafety.Web\ShieldSafety.Business\bin\Debug\ShieldSafety.Business.dll
 C:\ShieldSafety.Web\ShieldSafety.Business\bin\Debug\ShieldSafety.Business.pdb
 C:\ShieldSafety.Web\ShieldSafety.Business\obj\Debug\ShieldSafety.Business.dll
 C:\ShieldSafety.Web\ShieldSafety.Business\obj\Debug\ShieldSafety.Business.pdb
+C:\ShieldSafety.Web\ShieldSafety.Business\bin\Debug\ShieldSafety.Data.dll
+C:\ShieldSafety.Web\ShieldSafety.Business\bin\Debug\ShieldSafety.Data.pdb

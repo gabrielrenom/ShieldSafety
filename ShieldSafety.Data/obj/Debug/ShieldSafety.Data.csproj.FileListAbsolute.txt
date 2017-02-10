@@ -1,0 +1,5 @@
+C:\ShieldSafety.Web\ShieldSafety.Data\bin\Debug\ShieldSafety.Data.dll
+C:\ShieldSafety.Web\ShieldSafety.Data\bin\Debug\ShieldSafety.Data.pdb
+C:\ShieldSafety.Web\ShieldSafety.Data\obj\Debug\ShieldSafety.Data.csprojResolveAssemblyReference.cache
+C:\ShieldSafety.Web\ShieldSafety.Data\obj\Debug\ShieldSafety.Data.dll
+C:\ShieldSafety.Web\ShieldSafety.Data\obj\Debug\ShieldSafety.Data.pdb

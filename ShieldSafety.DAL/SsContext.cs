@@ -1,5 +1,5 @@
 ﻿using ShieldSafety.DAL.Configuration;
-using ShieldSafety.DAL.Models;
+using ShieldSafety.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

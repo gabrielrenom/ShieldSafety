@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShieldSafety.Business", "Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShieldSafety.DAL", "ShieldSafety.DAL\ShieldSafety.DAL.csproj", "{0DB8E170-C3F8-4D40-894B-A35F998994FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShieldSafety.Data", "ShieldSafety.Data\ShieldSafety.Data.csproj", "{C363AD03-6BF5-44BD-92C3-49E2FD4024B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShieldSafety.Test", "ShieldSafety.Test\ShieldSafety.Test.csproj", "{1C1A2719-49B2-486E-8CD5-50ACEF406103}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{0DB8E170-C3F8-4D40-894B-A35F998994FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DB8E170-C3F8-4D40-894B-A35F998994FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DB8E170-C3F8-4D40-894B-A35F998994FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C363AD03-6BF5-44BD-92C3-49E2FD4024B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C363AD03-6BF5-44BD-92C3-49E2FD4024B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C363AD03-6BF5-44BD-92C3-49E2FD4024B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C363AD03-6BF5-44BD-92C3-49E2FD4024B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C1A2719-49B2-486E-8CD5-50ACEF406103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C1A2719-49B2-486E-8CD5-50ACEF406103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C1A2719-49B2-486E-8CD5-50ACEF406103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C1A2719-49B2-486E-8CD5-50ACEF406103}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

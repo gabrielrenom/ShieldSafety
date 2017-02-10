@@ -52,11 +52,13 @@
     <Compile Include="Configuration\CustomerConfig.cs" />
     <Compile Include="Managers\BaseManager.cs" />
     <Compile Include="Managers\CustomerManager.cs" />
-    <Compile Include="Models\BaseEntity.cs" />
-    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Migrations\201702101252314_first_migration.cs" />
+    <Compile Include="Migrations\201702101252314_first_migration.Designer.cs">
+      <DependentUpon>201702101252314_first_migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
-    <Compile Include="Managers\IBaseManager.cs" />
     <Compile Include="Repository\SsRepository.cs" />
     <Compile Include="SsContext.cs" />
     <Compile Include="SsInitialiser.cs" />
@@ -71,6 +73,15 @@
       <Project>{02bcf86b-ecfc-4907-9f44-0e162260cb25}</Project>
       <Name>ShieldSafety.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShieldSafety.Data\ShieldSafety.Data.csproj">
+      <Project>{c363ad03-6bf5-44bd-92c3-49e2fd4024b4}</Project>
+      <Name>ShieldSafety.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702101252314_first_migration.resx">
+      <DependentUpon>201702101252314_first_migration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

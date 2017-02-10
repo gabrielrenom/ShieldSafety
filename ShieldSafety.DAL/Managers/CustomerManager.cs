@@ -1,5 +1,4 @@
 ﻿using ShieldSafety.Business.Model;
-using ShieldSafety.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,11 +6,19 @@ using System.Text;
 using System.Threading.Tasks;
 using ShieldSafety.Business.Repository;
 using System.Linq.Expressions;
+using ShieldSafety.Business.Managers;
+using ShieldSafety.Data.Models;
+using ShieldSafety.Business;
 
 namespace ShieldSafety.DAL.Managers
 {
-    public class CustomerManager : IBaseManager<CustomerModel, Customer>
+    public class CustomerManager : BaseManager<CustomerModel, Customer>, ICustomerManager
     {
+        public CustomerManager(ISsRepository repository)
+            : base(repository)
+        {
+            Repository = repository;
+        }
         public IGenericRepository Repository
         {
             get

@@ -44,3 +44,7 @@ C:\ShieldSafety.Web\ShieldSafety.Web\bin\Antlr3.Runtime.pdb
 C:\ShieldSafety.Web\ShieldSafety.Web\obj\Debug\ShieldSafety.Web.csprojResolveAssemblyReference.cache
 C:\ShieldSafety.Web\ShieldSafety.Web\obj\Debug\ShieldSafety.Web.dll
 C:\ShieldSafety.Web\ShieldSafety.Web\obj\Debug\ShieldSafety.Web.pdb
+C:\ShieldSafety.Web\ShieldSafety.Web\bin\EntityFramework.dll
+C:\ShieldSafety.Web\ShieldSafety.Web\bin\EntityFramework.SqlServer.dll
+C:\ShieldSafety.Web\ShieldSafety.Web\bin\EntityFramework.xml
+C:\ShieldSafety.Web\ShieldSafety.Web\bin\EntityFramework.SqlServer.xml
