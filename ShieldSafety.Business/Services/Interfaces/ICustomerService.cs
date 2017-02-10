@@ -13,5 +13,6 @@ namespace ShieldSafety.Business.Services.Interfaces
         Task<bool> UpdateAsync(CustomerModel model);
         Task<IEnumerable<CustomerModel>> GetAllAsync();
         Task<bool> DeleteAsync(int id);
+        Task<CustomerModel> GetByIdAsync(int id);
     }
 }

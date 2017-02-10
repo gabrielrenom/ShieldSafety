@@ -22,19 +22,24 @@ namespace ShieldSafety.Business.Services
             return await _customerManager.AddAsync(model);
         }
 
-        public Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _customerManager.DeleteByIdAsync(id);
         }
 
-        public Task<IEnumerable<CustomerModel>> GetAllAsync()
+        public async Task<IEnumerable<CustomerModel>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _customerManager.GetAllAsync();
         }
 
-        public Task<bool> UpdateAsync(CustomerModel model)
+        public async Task<CustomerModel> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _customerManager.GetByIdAsync(id);
+        }
+
+        public async Task<bool> UpdateAsync(CustomerModel model)
+        {
+            return await _customerManager.UpdateAsync(model);
         }
     }
 }

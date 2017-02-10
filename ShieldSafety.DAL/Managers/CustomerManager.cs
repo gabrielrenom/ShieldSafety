@@ -19,77 +19,92 @@ namespace ShieldSafety.DAL.Managers
         {
             Repository = repository;
         }
-        public IGenericRepository Repository
+        
+        public override async Task<CustomerModel> AddAsync(CustomerModel domainModel)
         {
-            get
+            return await base.AddAsync(domainModel);
+        }
+
+        public override Customer ToDataModel(CustomerModel domainModel, Customer dataModel = null)
+        {
+            return new Customer
             {
-                throw new NotImplementedException();
+                Created = domainModel.Created,
+                CreatedBy = domainModel.CreatedBy,
+                DOB = domainModel.DOB,
+                FirstName = domainModel.FirstName,
+                Modified = domainModel.Modified,
+                ModifiedBy = domainModel.ModifiedBy,
+                Surname = domainModel.Surname,
+                Telephone = domainModel.Telephone
+            };
+        }
+
+        public override Customer ToDataModelWithChildNodes(CustomerModel domainModel, Customer dataModel = null)
+        {
+            return new Customer
+            {
+                 Created = domainModel.Created,
+                  CreatedBy = domainModel.CreatedBy,
+                   DOB = domainModel.DOB,
+                    FirstName = domainModel.FirstName,
+                      Modified = domainModel.Modified,
+                       ModifiedBy = domainModel.ModifiedBy,
+                        Surname = domainModel.Surname,
+                         Telephone = domainModel.Telephone
+            };
+        }
+
+        public override CustomerModel ToDomainModel(Customer dataModel)
+        {
+            return new CustomerModel
+            {
+                 Created = dataModel.Created,
+                  CreatedBy = dataModel.CreatedBy,
+                   DOB = dataModel.DOB,
+                    FirstName = dataModel.FirstName,
+                     Id= dataModel.Id,
+                      Modified = dataModel.Modified,
+                       ModifiedBy = dataModel.ModifiedBy,
+                        Surname = dataModel.Surname,
+                          Telephone = dataModel.Telephone
+            };
+        }
+
+        public override CustomerModel ToDomainModelWithChildNodes(Customer dataModel)
+        {
+            return new CustomerModel
+            {
+                Created = dataModel.Created,
+                CreatedBy = dataModel.CreatedBy,
+                DOB = dataModel.DOB,
+                FirstName = dataModel.FirstName,
+                Id = dataModel.Id,
+                Modified = dataModel.Modified,
+                ModifiedBy = dataModel.ModifiedBy,
+                Surname = dataModel.Surname,
+                Telephone = dataModel.Telephone
+            };
+        }
+
+        public override async Task<bool> UpdateAsync(CustomerModel domainModel)
+        {
+            var customer = await Repository.GetSingleAsync<Customer>(x => x.Id == domainModel.Id);
+
+            if (customer != null)
+            {
+                customer.FirstName = domainModel.FirstName;
+                customer.Surname = domainModel.Surname;
+                customer.Telephone = domainModel.Telephone;
+                customer.DOB = domainModel.DOB;
+        
             }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+            Repository.Update<Customer>(customer);
+            var result = Repository.CommitAsync();
 
-        public Task<CustomerModel> AddAsync(CustomerModel domainModel)
-        {
-            throw new NotImplementedException();
-        }
+            return true;
 
-        public bool DeleteById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> DeleteByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<CustomerModel>> GetAllAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<CustomerModel> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<IEnumerable<CustomerModel>> GetListAsync(Expression<Func<Customer, bool>> where)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<CustomerModel> GetSingleAsync(Expression<Func<Customer, bool>> where)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Customer ToDataModel(CustomerModel domainModel, Customer dataModel = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Customer ToDataModelWithChildNodes(CustomerModel domainModel, Customer dataModel = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public CustomerModel ToDomainModel(Customer dataModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public CustomerModel ToDomainModelWithChildNodes(Customer dataModel)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<bool> UpdateAsync(CustomerModel domainModel)
-        {
-            throw new NotImplementedException();
         }
     }
 }

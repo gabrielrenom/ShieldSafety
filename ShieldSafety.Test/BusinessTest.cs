@@ -6,6 +6,8 @@ using ShieldSafety.Business.Services.Interfaces;
 using ShieldSafety.DAL.Repository;
 using ShieldSafety.DAL.Managers;
 using ShieldSafety.Business.Services;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace ShieldSafety.Test
 {
@@ -27,7 +29,7 @@ namespace ShieldSafety.Test
         }
 
         [TestMethod]
-        public async void GivenAName_AddCustomer()
+        public async Task GivenAName_AddCustomer()
         {
 
             var result = await _customerService.AddAsync(new Business.Model.CustomerModel {
@@ -35,13 +37,74 @@ namespace ShieldSafety.Test
                 Modified = DateTime.Now,
                 CreatedBy = "Gabi",
                 ModifiedBy = "Gabi",
-                DOB = DateTime.Now.AddYears(-50),
+                DOB = DateTime.Now,
                 FirstName = "Gabriel",
                 Surname = "Renom",
                 Telephone = "077823823"
             });
 
+            Assert.AreEqual(result.FirstName, "Gabriel");
+        }
 
+        [TestMethod]
+        public async Task GivenAnId_RemoveCustomer()
+        {
+
+            var addedCustomer = await _customerService.AddAsync(new Business.Model.CustomerModel
+            {
+                Created = DateTime.Now,
+                Modified = DateTime.Now,
+                CreatedBy = "Gabi",
+                ModifiedBy = "Gabi",
+                DOB = DateTime.Now,
+                FirstName = "Gabriel",
+                Surname = "Renom",
+                Telephone = "077823823"
+            });
+
+            var result = await _customerService.DeleteAsync(addedCustomer.Id);
+
+            Assert.IsTrue(result);
+        }
+        [TestMethod]
+        public async Task GivenAnId_UpdateCustomer()
+        {
+
+            var addedCustomer = await _customerService.AddAsync(new Business.Model.CustomerModel
+            {
+                Created = DateTime.Now,
+                Modified = DateTime.Now,
+                CreatedBy = "Gabi",
+                ModifiedBy = "Gabi",
+                DOB = DateTime.Now,
+                FirstName = "Gabriel",
+                Surname = "Renom",
+                Telephone = "077823823"
+            });
+
+            addedCustomer.Surname = "Trump";
+
+            var result = await _customerService.UpdateAsync(addedCustomer);
+
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public async Task GetAllCustomers()
+        {
+            var result = await _customerService.GetAllAsync();
+     
+            Assert.IsTrue(result.Count()>0);
+        }
+
+        [TestMethod]
+        public async Task GetCustomersById()
+        {
+            var customers = await _customerService.GetAllAsync();
+
+            var result = await _customerService.GetByIdAsync(customers.FirstOrDefault().Id);
+
+            Assert.AreEqual(result.Id, customers.FirstOrDefault().Id);
         }
     }
 }
