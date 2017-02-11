@@ -24,22 +24,27 @@
             @Html.DisplayNameFor(model => model.Modified)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Surname)
+            Name
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Telephone)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DOB)
+            Age
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
+@foreach (var item in Model)
+{
+    var result = new System.Text.StringBuilder();
+    string name = item.FirstName.Substring(0,3) + item.Surname.Substring(0,3);
+    foreach (char t in name)
+    {
+        result.Append(Convert.ToInt32(t).ToString("x"));
+    }
+
+    <tr style="background-color:#@result.ToString().Substring(0,6);">
         <td>
             @Html.DisplayFor(modelItem => item.CreatedBy)
         </td>
@@ -54,15 +59,14 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
+                &nbsp
             @Html.DisplayFor(modelItem => item.Surname)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Telephone)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DOB)
+                @Html.Raw(DateTime.Now.Year - item.DOB.Year)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
