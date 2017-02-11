@@ -5,7 +5,7 @@ Introduction
 This project has been entiraly created to provide a back-end administration with a future extension of an Angular.Js front-end. In order to do that the project itself has been desigend with MVC 5 but with a Web Api extension.
 The Data layer has been designed with dependency injection exposing the services to the presentation layer. The DAL is completly generic allowing us to scale the application
 
-Tecnical
+Technical
 
 The project has been hosted in a DbaaS (SQl Server) on Azure, providing future scability.
 
