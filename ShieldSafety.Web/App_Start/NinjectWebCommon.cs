@@ -5,12 +5,12 @@ namespace ShieldSafety.Web.App_Start
 {
     using System;
     using System.Web;
-
+    using Ninject.Web.WebApi;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
     using Ninject.Extensions.Conventions;
     using Ninject;
     using Ninject.Web.Common;
-
+    using System.Web.Http;
 
     public static class NinjectWebCommon 
     {
@@ -47,6 +47,8 @@ namespace ShieldSafety.Web.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(kernel);
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
+
                 return kernel;
             }
             catch

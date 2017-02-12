@@ -20,7 +20,7 @@ namespace ShieldSafety.Web.Controllers
         }
 
         // GET: Customer
-        public async Task <ActionResult> Index()
+        public async Task<ActionResult> Index()
         {
             var result = await _customerService.GetAllAsync();
 
@@ -91,7 +91,7 @@ namespace ShieldSafety.Web.Controllers
 
         // POST: Customer/Delete/5
         [HttpPost]
-        public async Task<ActionResult> Delete( CustomerModel customer)
+        public async Task<ActionResult> Delete(CustomerModel customer)
         {
             try
             {
@@ -104,7 +104,7 @@ namespace ShieldSafety.Web.Controllers
 
                 return View();
             }
-            
+
         }
     }
 }
